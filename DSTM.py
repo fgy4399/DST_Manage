@@ -11,7 +11,7 @@ class SSHClientApp:
         self.root = root
         self.root.title("饥荒管理工具 v0.0.5")
         self.root.geometry('670x475+100+100')
-        self.IP = ["175.24.174.247", "47.103.61.217"]
+        self.IP = ["127.0.0.1", "192.168.0.1"]  #服务器IP列表
         """"左边布局"""
         self.left_frame = tk.Frame(self.root)
         self.left_frame.pack(side=tk.LEFT,anchor=tk.N,padx=5,pady=5)
@@ -25,7 +25,7 @@ class SSHClientApp:
         self.label_host = ttk.Label(self.net_frame, text="地址:").pack(anchor=tk.W)
         self.host_var = tk.StringVar()
         self.combobox_host = ttk.Combobox(self.net_frame, textvariable=self.host_var, values=self.IP)
-        self.combobox_host.set("175.24.174.247")  # 设置默认值
+        self.combobox_host.set("127.0.0.1")  # 设置默认值
         self.combobox_host.bind("<FocusIn>", self.enable_editing)  # 绑定事件
         self.host_editable = False  # 判断是否可以编辑
         self.combobox_host.pack(anchor=tk.E)
